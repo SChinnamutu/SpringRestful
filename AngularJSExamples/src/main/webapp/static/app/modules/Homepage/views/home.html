@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		User Details
+		<button ng-click="openAddNew();" class="btn btn-success btn-xs pull-right">Add</button>
+	</div>
+	<div class="panel-body">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Website</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="user in userList">
+				<tr>
+					<th scope="row">{{user.id}}</th>
+					<td>{{user.name}}</td>
+					<td>{{user.email}}</td>
+					<td><a href="{{user.website}}">{{user.website}}</a></td>
+					<td>
+						<button ng-click="edit(user.id);" class="btn btn-success btn-xs">Edit</button>
+						<button ng-click="deleteUser(user.id);"
+							class="btn btn-danger btn-xs">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
